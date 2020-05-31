@@ -1,0 +1,36 @@
+2020-05-30 13:43:01 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Valor demasiado largo para la columna "CREADO_POR VARBINARY(255)": "X'aced00057372002a636f6d2e73616c657369616e6f73747269616e612e4261736b6574576974682e75736572732e55736572ea7d82f68806f2ba02000e5a00... (1231)"
+Value too long for column "CREADO_POR VARBINARY(255)": "X'aced00057372002a636f6d2e73616c657369616e6f73747269616e612e4261736b6574576974682e75736572732e55736572ea7d82f68806f2ba02000e5a00... (1231)"; SQL statement:
+insert into evento_gratuito (creado_por, fecha_creacion, fecha_evento, hora_evento, informacion, nombre, num_personas_unidas, ubicacion, id) values (?, ?, ?, ?, ?, ?, ?, ?, ?) [22001-200]
+2020-05-30 13:54:34 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Valor demasiado largo para la columna "CREADO_POR VARBINARY(255)": "X'aced00057372002a636f6d2e73616c657369616e6f73747269616e612e4261736b6574576974682e75736572732e55736572ea7d82f68806f2ba02000e5a00... (1231)"
+Value too long for column "CREADO_POR VARBINARY(255)": "X'aced00057372002a636f6d2e73616c657369616e6f73747269616e612e4261736b6574576974682e75736572732e55736572ea7d82f68806f2ba02000e5a00... (1231)"; SQL statement:
+insert into evento_gratuito (creado_por, fecha_creacion, fecha_evento, hora_evento, informacion, nombre, num_personas_unidas, ubicacion, id) values (?, ?, ?, ?, ?, ?, ?, ?, ?) [22001-200]
+2020-05-30 13:55:41 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Valor demasiado largo para la columna "CREADO_POR VARBINARY(255)": "X'aced00057372002a636f6d2e73616c657369616e6f73747269616e612e4261736b6574576974682e75736572732e55736572ea7d82f68806f2ba02000e5a00... (1237)"
+Value too long for column "CREADO_POR VARBINARY(255)": "X'aced00057372002a636f6d2e73616c657369616e6f73747269616e612e4261736b6574576974682e75736572732e55736572ea7d82f68806f2ba02000e5a00... (1237)"; SQL statement:
+insert into evento_gratuito (creado_por, fecha_creacion, fecha_evento, hora_evento, informacion, nombre, num_personas_unidas, ubicacion, id) values (?, ?, ?, ?, ?, ?, ?, ?, ?) [22001-200]
+2020-05-30 14:00:25 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Valor demasiado largo para la columna "CREADO_POR VARBINARY(255)": "X'aced00057372002a636f6d2e73616c657369616e6f73747269616e612e4261736b6574576974682e75736572732e55736572ea7d82f68806f2ba02000e5a00... (1231)"
+Value too long for column "CREADO_POR VARBINARY(255)": "X'aced00057372002a636f6d2e73616c657369616e6f73747269616e612e4261736b6574576974682e75736572732e55736572ea7d82f68806f2ba02000e5a00... (1231)"; SQL statement:
+insert into evento_gratuito (creado_por, fecha_creacion, fecha_evento, hora_evento, informacion, nombre, num_personas_unidas, ubicacion, id) values (?, ?, ?, ?, ?, ?, ?, ?, ?) [22001-200]
+2020-05-30 14:02:43 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Valor demasiado largo para la columna "CREADO_POR VARBINARY(255)": "X'aced00057372002a636f6d2e73616c657369616e6f73747269616e612e4261736b6574576974682e75736572732e55736572ea7d82f68806f2ba02000e5a00... (1237)"
+Value too long for column "CREADO_POR VARBINARY(255)": "X'aced00057372002a636f6d2e73616c657369616e6f73747269616e612e4261736b6574576974682e75736572732e55736572ea7d82f68806f2ba02000e5a00... (1237)"; SQL statement:
+insert into evento_gratuito (creado_por, fecha_creacion, fecha_evento, hora_evento, informacion, nombre, num_personas_unidas, ubicacion, id) values (?, ?, ?, ?, ?, ?, ?, ?, ?) [22001-200]
+2020-05-30 14:10:49 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Valor demasiado largo para la columna "CREADO_POR VARBINARY(255)": "X'aced00057372002a636f6d2e73616c657369616e6f73747269616e612e4261736b6574576974682e75736572732e55736572ea7d82f68806f2ba02000e5a00... (1237)"
+Value too long for column "CREADO_POR VARBINARY(255)": "X'aced00057372002a636f6d2e73616c657369616e6f73747269616e612e4261736b6574576974682e75736572732e55736572ea7d82f68806f2ba02000e5a00... (1237)"; SQL statement:
+insert into evento_gratuito (creado_por, fecha_creacion, fecha_evento, hora_evento, informacion, nombre, num_personas_unidas, ubicacion, id) values (?, ?, ?, ?, ?, ?, ?, ?, ?) [22001-200]
+2020-05-30 14:14:11 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Valor demasiado largo para la columna "CREADO_POR VARBINARY(255)": "X'aced00057372002a636f6d2e73616c657369616e6f73747269616e612e4261736b6574576974682e75736572732e55736572ea7d82f68806f2ba02000e5a00... (1237)"
+Value too long for column "CREADO_POR VARBINARY(255)": "X'aced00057372002a636f6d2e73616c657369616e6f73747269616e612e4261736b6574576974682e75736572732e55736572ea7d82f68806f2ba02000e5a00... (1237)"; SQL statement:
+insert into evento_de_pago (creado_por, fecha_creacion, fecha_evento, hora_evento, informacion, nombre, num_contacto, num_personas_unidas, precio_por_persona, ubicacion, id) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) [22001-200]
+2020-05-30 14:18:18 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Valor demasiado largo para la columna "CREADO_POR VARBINARY(255)": "X'aced00057372002a636f6d2e73616c657369616e6f73747269616e612e4261736b6574576974682e75736572732e55736572ea7d82f68806f2ba02000e5a00... (1237)"
+Value too long for column "CREADO_POR VARBINARY(255)": "X'aced00057372002a636f6d2e73616c657369616e6f73747269616e612e4261736b6574576974682e75736572732e55736572ea7d82f68806f2ba02000e5a00... (1237)"; SQL statement:
+insert into evento_de_pago (creado_por, fecha_creacion, fecha_evento, hora_evento, informacion, nombre, num_contacto, num_personas_unidas, precio_por_persona, ubicacion, id) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) [22001-200]
+2020-05-30 20:02:16 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Valor demasiado largo para la columna "CREADO_POR VARBINARY(255)": "X'aced00057372002a636f6d2e73616c657369616e6f73747269616e612e4261736b6574576974682e75736572732e55736572ea7d82f68806f2ba02000e5a00... (1237)"
+Value too long for column "CREADO_POR VARBINARY(255)": "X'aced00057372002a636f6d2e73616c657369616e6f73747269616e612e4261736b6574576974682e75736572732e55736572ea7d82f68806f2ba02000e5a00... (1237)"; SQL statement:
+insert into evento_de_pago (creado_por, fecha_creacion, fecha_evento, hora_evento, informacion, nombre, num_contacto, num_personas_unidas, precio_por_persona, ubicacion, id) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) [22001-200]

@@ -1,0 +1,2 @@
+rootProject.name='BasketWithApp'
+include ':app'
