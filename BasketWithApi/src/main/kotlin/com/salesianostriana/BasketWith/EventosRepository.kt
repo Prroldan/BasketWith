@@ -51,6 +51,7 @@ fun initData(){
     userRepository.save(user4)
     println(user4.id)
     println(user1.id)
+    println(user1.password)
 
     val listaUsuarios = ArrayList<User>()
     val listaUsuariosVacia = ArrayList<User>()
