@@ -13,3 +13,5 @@ Se podrán utilizar distintos usuarios para los datos de prueba:
 
 Esta es la primera versíon de esta aplicacón, teniendo en cuenta en siguientes actualizaciones
 mejoras y nuevas funcionalidades de la misma.
+
+Url de heroku: https://api-basketwith.herokuapp.com/ (Con fallo en la creación de la base de datos)
