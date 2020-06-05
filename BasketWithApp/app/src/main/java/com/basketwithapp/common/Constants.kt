@@ -6,7 +6,9 @@ public class Constants {
 
         const val  API_URL = "http://10.0.3.2:9000/"
         val APP_SETTINGS = "APP_SETTINGS"
-        val TOKEN = "token"
+        var TOKEN = "token"
+        var FREE_EVENT_ID = "idFreeEvent"
+        var PAY_EVENT_ID = "idPayEvent"
     }
 
 

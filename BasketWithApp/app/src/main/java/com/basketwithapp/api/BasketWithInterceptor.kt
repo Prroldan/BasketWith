@@ -1,3 +1,4 @@
+
 package com.basketwithapp.api
 
 import com.basketwithapp.api.SharedPreferencesManager
@@ -15,10 +16,11 @@ class BasketWithInterceptor: Interceptor {
             )
         var request = chain.request()
 
-        request = request?.newBuilder()
-            .addHeader("Content-Type", "application/json")
-            //.addHeader("Authorization", "Bearer $token")
-            .build()
+            token= SharedPreferencesManager.getStringValue(Constants.TOKEN)
+            request = request?.newBuilder()
+                .addHeader("Authorization", "Bearer $token")
+                .build()
+
 
         return chain.proceed(request)
 

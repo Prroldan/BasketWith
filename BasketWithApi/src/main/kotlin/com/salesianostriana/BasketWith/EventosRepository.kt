@@ -16,14 +16,15 @@ interface EventoGratuitoRepository:JpaRepository<EventoGratuito, UUID>{
 
 
     fun findByNombre(nombre:String):Optional<EventoGratuito>
-    fun findByCreadoPor(creado_por:String):Optional<EventoGratuito>
+    fun findAllByCreadoPor(creado_por:User):List<EventoGratuito>
+
 
 
 }
 interface EventoPagoRepository:JpaRepository<EventoDePago,UUID>{
 
     fun findByNombre(nombre:String):Optional<EventoDePago>
-    fun findByCreadoPor(creado_por: String):Optional<EventoDePago>
+    fun findAllByCreadoPor(creado_por: User):List<EventoDePago>
 
 }
 
@@ -74,9 +75,9 @@ fun initData(){
     userRepository.save(user3)
     userRepository.save(user4)
 
-    //eventosGratuitosRepository.save(event2)
-    //eventosGratuitosRepository.save(event3)
-    //eventosRepository.save(event4)
+    eventosGratuitosRepository.save(event2)
+    eventosGratuitosRepository.save(event3)
+    eventosRepository.save(event4)
 
 
 }

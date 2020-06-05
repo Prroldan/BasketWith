@@ -11,7 +11,7 @@
         android:layout_width="123dp"
         android:layout_height="99dp"
         android:layout_marginStart="200dp"
-        android:layout_marginTop="76dp"
+        android:layout_marginTop="52dp"
         app:layout_constraintStart_toStartOf="@+id/textView"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ic_principal" />

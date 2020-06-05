@@ -1,5 +1,6 @@
 package com.salesianostriana.BasketWith
 
+import com.salesianostriana.BasketWith.users.User
 import com.salesianostriana.BasketWith.users.UserRepository
 import org.springframework.security.crypto.password.PasswordEncoder
 import org.springframework.stereotype.Service
@@ -14,8 +15,8 @@ class EventFreeService: BaseService<EventoGratuito, UUID, EventoGratuitoReposito
         return this.repository.findByNombre(nombre)
 
     }
-    fun findByCreadoPorFree(creadoPor:String): Optional<EventoGratuito> {
-        return this.repository.findByCreadoPor(creadoPor)
+    fun findByCreadoPorFree(creadoPor:User): List<EventoGratuito> {
+        return this.repository.findAllByCreadoPor(creadoPor)
     }
 
 
@@ -31,8 +32,8 @@ class EventPayService: BaseService<EventoDePago, UUID, EventoPagoRepository>() {
         return this.repository.findByNombre(nombre)
     }
 
-    fun findByCreadoPorPay(creadoPor:String): Optional<EventoDePago> {
-        return this.repository.findByCreadoPor(creadoPor)
+    fun findByCreadoPorPay(creadoPor: User): List<EventoDePago> {
+        return this.repository.findAllByCreadoPor(creadoPor)
     }
 
 }

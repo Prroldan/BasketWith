@@ -18,13 +18,16 @@ class BasketWithClient {
         var logging : HttpLoggingInterceptor = HttpLoggingInterceptor()
         logging.setLevel(HttpLoggingInterceptor.Level.BODY)
 
-        val cliente = okHttpClientBuilder
+        val cliente = okHttpClientBuilder.addInterceptor(logging).build()
+
 
         retrofit = Retrofit.Builder()
             .baseUrl(Constants.API_URL)
             .addConverterFactory(GsonConverterFactory.create())
-            .client(cliente.addInterceptor(logging).build())
+            .client(cliente)
             .build()
+
+
 
         basketWithService = retrofit.create(BasketWithService::class.java)
     }

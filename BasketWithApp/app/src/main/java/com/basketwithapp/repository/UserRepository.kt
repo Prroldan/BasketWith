@@ -21,9 +21,9 @@ class UserRepository {
     var userResponse: MutableLiveData<UserResponse> = MutableLiveData<UserResponse>()
 
 
+
     init {
         basketWithService = basketWithClient.getBasketWithService()
-
     }
 
     fun login(loginDto: LoginDto): MutableLiveData<LoginResponse> {
@@ -48,6 +48,7 @@ class UserRepository {
 
     fun registro(registroDto: RegistroDto): MutableLiveData<UserResponse> {
         val call: Call<UserResponse> = basketWithService.register(registroDto)
+
         call.enqueue(object: Callback<UserResponse>{
 
             override fun onResponse(call: Call<UserResponse>, response: Response<UserResponse>) {
