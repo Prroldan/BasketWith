@@ -1,4 +1,4 @@
-package com.basketwithapp
+package com.basketwithapp.di
 
 import android.content.Intent
 import androidx.recyclerview.widget.RecyclerView
@@ -7,41 +7,42 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.core.content.ContextCompat.startActivity
+import com.basketwithapp.DetalleFreeEventHistorialActivity
+import com.basketwithapp.FreeEventDetalleActivity
+import com.basketwithapp.R
 import com.basketwithapp.common.Constants
 import com.basketwithapp.common.MyApp
+import com.basketwithapp.models.freeEvents.ListFreeEventsResponseItem
+import com.basketwithapp.viewmodel.FreeEventsViewModel
+
+import kotlinx.android.synthetic.main.fragment_list_free_events_response.view.*
 
 
-import com.basketwithapp.models.payEvents.ListPayEventsResponse
-import com.basketwithapp.models.payEvents.ListPayEventsResponseItem
-import com.basketwithapp.viewmodel.PayEventsViewModel
+class MyListFreeEventsResponseRecyclerViewAdapter(
 
-import kotlinx.android.synthetic.main.fragment_list_pay_events_response.view.*
+) : RecyclerView.Adapter<MyListFreeEventsResponseRecyclerViewAdapter.ViewHolder>() {
 
-
-class MyListPayEventsResponseRecyclerViewAdapter(
-
-) : RecyclerView.Adapter<MyListPayEventsResponseRecyclerViewAdapter.ViewHolder>() {
-
-    private var mValues: List<ListPayEventsResponseItem?> = ArrayList()
+    private var mValues: List<ListFreeEventsResponseItem?> = ArrayList()
     private val mOnClickListener: View.OnClickListener
-    var payEventsViewModel: PayEventsViewModel= PayEventsViewModel()
-    lateinit var idPayEventoSelecc:String
+    var freeEventsViewModel:FreeEventsViewModel = FreeEventsViewModel()
+    lateinit var idFreeEventoSelecc:String
 
     init {
         mOnClickListener = View.OnClickListener { v ->
-            val item = v.tag as ListPayEventsResponseItem
-            idPayEventoSelecc = item.id
-            val intent = Intent(MyApp.context, PayEventDetalleActivity::class.java)
+            val item = v.tag as ListFreeEventsResponseItem
+            idFreeEventoSelecc = item.id
+            val intent = Intent(MyApp.context, DetalleFreeEventHistorialActivity::class.java)
             intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
-            payEventsViewModel.setIdPayEventSeleccionado(idPayEventoSelecc)
-            intent.putExtra(Constants.PAY_EVENT_ID,idPayEventoSelecc )
+            freeEventsViewModel.setIdFreeEventSeleccionado(idFreeEventoSelecc)
+            intent.putExtra(Constants.FREE_EVENT_ID,idFreeEventoSelecc )
             MyApp.context?.let { startActivity(it, intent, null) }
+
         }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context)
-            .inflate(R.layout.fragment_list_pay_events_response, parent, false)
+            .inflate(R.layout.fragment_list_free_events_response, parent, false)
         return ViewHolder(view)
     }
 
@@ -62,7 +63,7 @@ class MyListPayEventsResponseRecyclerViewAdapter(
 
     override fun getItemCount(): Int = mValues.size
 
-    fun setData(listEventos: List<ListPayEventsResponseItem?>) {
+    fun setData(listEventos: List<ListFreeEventsResponseItem?>) {
         mValues = listEventos!!
         notifyDataSetChanged()
     }
@@ -71,6 +72,7 @@ class MyListPayEventsResponseRecyclerViewAdapter(
         val nombre: TextView = mView.nombre
         val fecha: TextView = mView.fecha
         val hora: TextView = mView.hora
+
 
 
     }

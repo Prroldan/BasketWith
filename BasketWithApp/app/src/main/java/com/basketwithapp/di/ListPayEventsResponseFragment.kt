@@ -1,4 +1,4 @@
-package com.basketwithapp
+package com.basketwithapp.di
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -9,6 +9,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.Observer
+import com.basketwithapp.R
 
 import com.basketwithapp.models.payEvents.ListPayEventsResponseItem
 import com.basketwithapp.viewmodel.PayEventsViewModel
@@ -43,7 +44,8 @@ class ListPayEventsResponseFragment : Fragment() {
         val view =
             inflater.inflate(R.layout.fragment_list_free_events_response_list, container, false)
 
-        myListPayEventsResponseRecyclerViewAdapter = MyListPayEventsResponseRecyclerViewAdapter()
+        myListPayEventsResponseRecyclerViewAdapter =
+            MyListPayEventsResponseRecyclerViewAdapter()
 
         // Set the adapter
         if (view is RecyclerView) {

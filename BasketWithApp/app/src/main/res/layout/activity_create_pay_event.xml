@@ -10,8 +10,8 @@
         android:id="@+id/imageView"
         android:layout_width="123dp"
         android:layout_height="99dp"
-        android:layout_marginStart="184dp"
-        android:layout_marginTop="48dp"
+        android:layout_marginStart="188dp"
+        android:layout_marginTop="40dp"
         app:layout_constraintStart_toStartOf="@+id/textView"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ic_principal" />
@@ -38,83 +38,98 @@
                 android:ems="10"
                 android:hint="Name"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <EditText
-                android:id="@+id/surname"
+                android:id="@+id/ubicacion"
                 android:layout_width="255dp"
                 android:layout_height="43dp"
-                android:layout_marginTop="13dp"
+                android:layout_marginTop="12dp"
                 android:ems="10"
-                android:hint="Surname"
+                android:hint="Ubicación"
                 android:inputType="text"
                 android:textColor="#000000"
                 app:layout_constraintEnd_toEndOf="@+id/name"
+                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="@+id/name"
                 app:layout_constraintTop_toBottomOf="@+id/name" />
 
             <EditText
-                android:id="@+id/edad"
+                android:id="@+id/informacion"
                 android:layout_width="255dp"
                 android:layout_height="43dp"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="8dp"
                 android:ems="10"
-                android:hint="Edad"
+                android:hint="Información"
                 android:inputType="text"
                 android:textColor="#000000"
-                app:layout_constraintEnd_toEndOf="@+id/password"
-                app:layout_constraintStart_toStartOf="@+id/password"
-                app:layout_constraintTop_toBottomOf="@+id/password" />
+                app:layout_constraintEnd_toEndOf="@+id/ubicacion"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/ubicacion"
+                app:layout_constraintTop_toBottomOf="@+id/ubicacion" />
 
             <EditText
-                android:id="@+id/dni"
+                android:id="@+id/fechaEvento"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="8dp"
                 android:ems="10"
-                android:hint="Dni"
-                android:inputType="textPersonName"
-                app:layout_constraintEnd_toEndOf="@+id/edad"
-                app:layout_constraintStart_toStartOf="@+id/edad"
-                app:layout_constraintTop_toBottomOf="@+id/edad" />
+                android:hint="Fecha evento"
+                android:inputType="text"
+                app:layout_constraintEnd_toEndOf="@+id/numcontacto"
+                app:layout_constraintStart_toStartOf="@+id/numcontacto"
+                app:layout_constraintTop_toBottomOf="@+id/numcontacto" />
 
             <EditText
-                android:id="@+id/username"
+                android:id="@+id/horaEvento"
                 android:layout_width="256dp"
                 android:layout_height="48dp"
-                android:layout_marginTop="15dp"
+                android:layout_marginTop="9dp"
                 android:ems="10"
-                android:hint="Username"
-                android:inputType="textPersonName"
-                app:layout_constraintEnd_toEndOf="@+id/surname"
-                app:layout_constraintStart_toStartOf="@+id/surname"
-                app:layout_constraintTop_toBottomOf="@+id/surname" />
+                android:hint="Hora evento"
+                android:inputType="text"
+                app:layout_constraintEnd_toEndOf="@+id/fechaEvento"
+                app:layout_constraintStart_toStartOf="@+id/fechaEvento"
+                app:layout_constraintTop_toBottomOf="@+id/fechaEvento" />
 
             <EditText
-                android:id="@+id/password"
+                android:id="@+id/precioPorPersona"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="12dp"
                 android:ems="10"
-                android:hint="Password"
-                android:inputType="textPassword"
-                android:textColor="#000000"
-                app:layout_constraintEnd_toEndOf="@+id/username"
+                android:hint="Precio por persona"
+                android:inputType="textPersonName"
+                app:layout_constraintEnd_toEndOf="@+id/informacion"
                 app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="@+id/username"
-                app:layout_constraintTop_toBottomOf="@+id/username" />
+                app:layout_constraintStart_toStartOf="@+id/informacion"
+                app:layout_constraintTop_toBottomOf="@+id/informacion" />
+
+            <EditText
+                android:id="@+id/numcontacto"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="7dp"
+                android:ems="10"
+                android:hint="Número de contacto"
+                android:inputType="textPersonName"
+                app:layout_constraintEnd_toEndOf="@+id/precioPorPersona"
+                app:layout_constraintStart_toStartOf="@+id/precioPorPersona"
+                app:layout_constraintTop_toBottomOf="@+id/precioPorPersona" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.cardview.widget.CardView>
 
     <Button
-        android:id="@+id/buttonRegister"
+        android:id="@+id/buttonSave"
         style="@style/Widget.AppCompat.Button.Colored"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Sign in"
+        android:layout_marginTop="8dp"
+        android:text="Save"
         app:layout_constraintEnd_toEndOf="@+id/cardView"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/cardView"
@@ -126,7 +141,7 @@
         android:layout_width="244dp"
         android:layout_height="91dp"
         android:layout_marginStart="56dp"
-        android:layout_marginTop="76dp"
+        android:layout_marginTop="50dp"
         android:fontFamily="@font/aref_ruqaa"
         android:text="BasketWith"
         android:textColor="#000000"

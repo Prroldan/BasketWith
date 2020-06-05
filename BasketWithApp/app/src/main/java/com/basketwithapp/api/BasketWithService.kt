@@ -2,10 +2,10 @@ package com.basketwithapp.api
 
 import com.basketwithapp.api.response.DetalleFreeEventResponse
 import com.basketwithapp.api.response.DetallePayEventResponse
-import com.basketwithapp.dto.LoginDto
 import com.basketwithapp.api.response.LoginResponse
 import com.basketwithapp.api.response.UserResponse
-import com.basketwithapp.dto.RegistroDto
+import com.basketwithapp.dto.*
+import com.basketwithapp.models.User
 import com.basketwithapp.models.freeEvents.ListFreeEventsResponse
 import com.basketwithapp.models.freeEvents.ListFreeEventsResponseItem
 import com.basketwithapp.models.payEvents.ListPayEventsResponse
@@ -19,11 +19,11 @@ interface BasketWithService {
     @GET("/payEvents/")
     fun getAllPayEvents(): Call<List<ListPayEventsResponseItem>>
 
-    @GET("/freeEvents/me")
-    fun getAllFreeEventsMe(): Call<List<ListFreeEventsResponseItem>>
+    @GET("/freeEvents/me/{id}")
+    fun getAllFreeEventsMe(@Path("id")id: String): Call<List<ListFreeEventsResponseItem>>
 
-    @GET("/payEvents/me")
-    fun getAllPayEventsMe(): Call<List<ListPayEventsResponseItem>>
+    @GET("/payEvents/me/{id}")
+    fun getAllPayEventsMe(@Path("id")id:String): Call<List<ListPayEventsResponseItem>>
 
     @GET("/payEvents/{id}")
     fun getPayEventsById(@Path("id")idEvento:String): Call<DetallePayEventResponse>
@@ -41,20 +41,32 @@ interface BasketWithService {
     fun register(@Body registroDto: RegistroDto): Call<UserResponse>
 
     @POST("/freeEvents/")
-    fun createFreeEvent(@Body createFreeEventDto: CreateFreeEventDto): Call<>
+    fun createFreeEvent(@Body createFreeEventDto: CreateFreeEventDto): Call<FreeEventoDto>
 
     @POST("/payEvents/")
-    fun createPayEvent(@Body createPayEventDto: CreatePayEventDto): Call<>
+    fun createPayEvent(@Body createPayEventDto: CreatePayEventDto): Call<PayEventDto>
 
-    @PUT("/freeEvents/")
-    fun editFreeEvent(@Body editFreeEventDto: EditFreeEventDto):Call<>
+    @PUT("/freeEvents/{id}")
+    fun editFreeEvent(@Path("id")id:String,@Body editFreeEventDto: CreateFreeEventDto):Call<FreeEventoDto>
 
     @PUT("/payEvents/")
-    fun editPayEvent(@Body editPayEventDto: EditPayEventDto):Call<>
+    fun editPayEvent(@Path("id")id:String,@Body editPayEventDto: CreatePayEventDto):Call<PayEventDto>
 
     @DELETE("/freeEvents/{id}")
-    fun deleteFreeEvent(@Path("id")idEvento:String)
+    fun deleteFreeEvent(@Path("id")idEvento:String): Call<Void>
 
     @DELETE("/payEvents/{id}")
-    fun deletePayEvent(@Path("id")idEvento:String)
+    fun deletePayEvent(@Path("id")idEvento:String): Call<Void>
+
+    @POST("/freeEvents/{idUser}/{idEvento}")
+    fun joinAFreeEvent(@Path("id")idUser:String, @Path("id")idEvento:String)
+
+    @POST("/payEvents/{idUser}/{idEvento}")
+    fun joinAPayEvent(@Path("id")idUs:String, @Path("id")idEvent:String)
+
+    @DELETE("/freeEvents/{idUser}/{idEvento}")
+    fun exitFreeEvent(@Path("id")idUser:String, @Path("id")idEvento:String)
+
+    @DELETE("/payEvents/{idUser}/{idEvento}")
+    fun exitPayEvent(@Path("id")idUser:String, @Path("id")idEvento:String)
 }

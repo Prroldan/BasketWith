@@ -15,8 +15,8 @@ class EventFreeService: BaseService<EventoGratuito, UUID, EventoGratuitoReposito
         return this.repository.findByNombre(nombre)
 
     }
-    fun findByCreadoPorFree(creadoPor:User): List<EventoGratuito> {
-        return this.repository.findAllByCreadoPor(creadoPor)
+    fun findByCreadoPorFree(id:UUID): List<EventoGratuito> {
+        return this.repository.findAllHistorial(id)
     }
 
 

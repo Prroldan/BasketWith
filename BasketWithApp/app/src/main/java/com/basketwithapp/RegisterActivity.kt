@@ -42,10 +42,10 @@ class RegisterActivity : AppCompatActivity() {
 
         btnRegister.setOnClickListener(View.OnClickListener {
             registroDto = RegistroDto(
-               name.text.toString(),
+                dni.text.toString(),
+                edad.text.toString(),
+                name.text.toString(),
                surname.text.toString(),
-               edad.text.toString(),
-               dni.text.toString(),
                username.text.toString(),
                password.text.toString()
             )

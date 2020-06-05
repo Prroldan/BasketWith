@@ -2,7 +2,6 @@ package com.basketwithapp
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
@@ -34,7 +33,7 @@ class LoginActivity : AppCompatActivity() {
         userViewModel = ViewModelProvider(this).get(UserViewModel::class.java)
 
         username = findViewById(R.id.username)
-        password = findViewById(R.id.surname)
+        password = findViewById(R.id.password)
         btnLogin = findViewById(R.id.buttonLogin)
         btnRegister = findViewById(R.id.buttonRegister)
 
@@ -45,6 +44,7 @@ class LoginActivity : AppCompatActivity() {
             )
             userViewModel.doLogin(loginDto).observe(this, Observer {
                 SharedPreferencesManager.setStringValue(Constants.TOKEN, it.token)
+                SharedPreferencesManager.setStringValue(Constants.USER_ID, it.user.id.toString())
                 val i = Intent(this, MainActivity::class.java)
                 startActivity(i)
             })

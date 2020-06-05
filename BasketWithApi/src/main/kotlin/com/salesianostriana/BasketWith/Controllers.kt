@@ -43,8 +43,8 @@ class EventoGratuitoController(val eventFreeService: EventFreeService, val userS
     fun getById(@PathVariable id: UUID) = getFreeEventsById(id).toEventoGratuitoDto()
 
     @PostMapping("/")
-    fun newFreeEvent(@RequestBody newFreeEvent: eventoGratuitoDto): ResponseEntity<eventoGratuitoDto> = ResponseEntity.status(HttpStatus.CREATED)
-            .body(eventFreeService.save(newFreeEvent.toEventoGratuito()).toEventoGratuitoDto())
+    fun newFreeEvent(@RequestBody newFreeEvent: NewEventoGratuitoDto, @AuthenticationPrincipal user:User): ResponseEntity<EventoGratuitoDto> = ResponseEntity.status(HttpStatus.CREATED)
+            .body(eventFreeService.save(newFreeEvent.toEventoGratuito(user)).toEventoGratuitoDto())
 
     @PostMapping("/{idUser}/{idEvento}")
     fun joinFreeEvent(@PathVariable idUser: UUID, @PathVariable idEvento: UUID) {
@@ -61,15 +61,18 @@ class EventoGratuitoController(val eventFreeService: EventFreeService, val userS
     }
 
     @PutMapping("/")
-    fun editFreeEvent(idEdit: UUID, @RequestBody edit: eventoGratuitoDto): eventoGratuitoDto {
-        var result: EventoGratuito
-        result = getFreeEventsById(idEdit)
-        result = edit.toEventoGratuito()
+    fun editFreeEvent(idEdit: UUID, @RequestBody edit: NewEventoGratuitoDto): EventoGratuitoDto {
+        var result = getFreeEventsById(idEdit)
+        result.nombre = edit.nombre
+        result.horaEvento = edit.horaEvento
+        result.informacion = edit.informacion
+        result.ubicacion = edit.ubicacion
+        result.fechaEvento = edit.fechaEvento
         ResponseEntity.status(HttpStatus.CREATED)
-                .body(eventFreeService.save(edit.toEventoGratuito()))
+                .body(eventFreeService.save(result))
 
 
-        return edit
+        return result.toEventoGratuitoDto()
     }
 
     @DeleteMapping("/{idUser}/{idEvento}")
@@ -93,11 +96,11 @@ class EventoGratuitoController(val eventFreeService: EventFreeService, val userS
         eventFreeService.delete(result)
     }
 
-    @GetMapping("/me")
-    fun getAllFreeEventsMe(@AuthenticationPrincipal user: User): List<EventoGratuito> {
+    @GetMapping("/me/{id}")
+    fun getAllFreeEventsMe(@PathVariable id:UUID): List<EventoGratuito> {
         var result: List<EventoGratuito>
         with(eventFreeService) {
-            result = findByCreadoPorFree(user)
+            result = findByCreadoPorFree(id)
         }
 
         if (result.isEmpty())
@@ -144,14 +147,13 @@ class EventoDePagoController(val eventPayService: EventPayService, val userServi
     fun getById(@PathVariable id: UUID) = getPayEventsById(id).toEventodePagoDto()
 
     @PostMapping("/")
-    fun newPayEvent(@RequestBody newPayEvent: eventodePagoDto): ResponseEntity<eventodePagoDto> = ResponseEntity.status(HttpStatus.CREATED)
-            .body(eventPayService.save(newPayEvent.toEventoDePago()).toEventodePagoDto())
+    fun newPayEvent(@RequestBody newPayEvent: NewEventoPagoDto, @AuthenticationPrincipal user:User): ResponseEntity<EventodePagoDto> = ResponseEntity.status(HttpStatus.CREATED)
+            .body(eventPayService.save(newPayEvent.toEventoPago(user)).toEventodePagoDto())
 
-    @PostMapping("/{idUser}/{idEvento}")
-    fun joinFreeEvent(@PathVariable idUser: UUID, @PathVariable idEvento: UUID) {
-        var user: User? = null
+    @PostMapping("/{idEvento}")
+    fun joinPayEvent(@AuthenticationPrincipal user:User, @PathVariable idEvento: UUID) {
+
         var eventoDePago: EventoDePago? = null
-        user = userService.findById(idUser).get()
         eventoDePago = eventPayService.findByIdPay(idEvento).get()
         if (user != null) {
             eventoDePago?.ListPersonasUnidasPago?.add(user)
@@ -161,16 +163,18 @@ class EventoDePagoController(val eventPayService: EventPayService, val userServi
     }
 
     @PutMapping("/")
-    fun editPayEvent(idEdit: UUID, @RequestBody edit: eventodePagoDto): eventodePagoDto {
-        var result: EventoDePago
-        result = getPayEventsById(idEdit)
-        result = edit.toEventoDePago()
+    fun editPayEvent(idEdit: UUID, @RequestBody edit: EventodePagoDto): EventodePagoDto {
+        var result = getPayEventsById(idEdit)
+        result.nombre = edit.nombre
+        result.horaEvento = edit.horaEvento
+        result.informacion = edit.informacion
+        result.ubicacion = edit.ubicacion
+        result.fechaEvento = edit.fechaEvento
         ResponseEntity.status(HttpStatus.CREATED)
-                .body(eventPayService.save(edit.toEventoDePago()))
-
-        return edit
+                .body(eventPayService.save(result))
 
 
+        return result.toEventodePagoDto()
     }
 
     @DeleteMapping("/{idUser}/{idEvento}")

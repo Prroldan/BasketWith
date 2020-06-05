@@ -13,7 +13,12 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".PayEventDetalleActivity"></activity>
+        <activity android:name=".EditFreeEventActivity"></activity>
+        <activity android:name=".DetallePayEventHistorialActivity" />
+        <activity android:name=".DetalleFreeEventHistorialActivity" />
+        <activity android:name=".CreatePayEventActivity" />
+        <activity android:name=".CreateFreeEventActivity" />
+        <activity android:name=".PayEventDetalleActivity" />
         <activity android:name=".FreeEventDetalleActivity" />
         <activity android:name=".RegisterActivity" />
         <activity android:name=".LoginActivity">

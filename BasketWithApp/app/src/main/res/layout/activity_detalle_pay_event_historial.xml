@@ -62,14 +62,14 @@
 
     <TextView
         android:id="@+id/ubicacion"
-        android:layout_width="67dp"
-        android:layout_height="22dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:layout_marginEnd="36dp"
         android:text="TextView"
         android:textColor="#000000"
         android:textColorHighlight="#000000"
-        android:textSize="14sp"
+        android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Hora" />
 
@@ -115,7 +115,7 @@
         android:id="@+id/textView26"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
+        android:layout_marginStart="8dp"
         android:text="Ubicación: "
         android:textColor="#000000"
         android:textSize="18sp"
@@ -152,7 +152,7 @@
         android:id="@+id/textView13"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="44dp"
+        android:layout_marginBottom="28dp"
         android:text="Personas unidas: "
         android:textColor="#000000"
         android:textSize="18sp"
@@ -173,9 +173,9 @@
 
     <TextView
         android:id="@+id/persUnidas"
-        android:layout_width="149dp"
-        android:layout_height="68dp"
-        android:layout_marginStart="28dp"
+        android:layout_width="146dp"
+        android:layout_height="53dp"
+        android:layout_marginStart="32dp"
         android:layout_marginTop="32dp"
         android:layout_marginBottom="16dp"
         android:text="TextView"
@@ -234,14 +234,23 @@
         app:layout_constraintTop_toTopOf="@+id/textView11" />
 
     <Button
-        android:id="@+id/join"
-        style="@style/Widget.AppCompat.Button.Colored"
+        android:id="@+id/buttonEditar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="100dp"
-        android:text="Join"
-        app:layout_constraintEnd_toEndOf="@+id/persUnidas"
+        android:layout_marginEnd="116dp"
+        android:text="Editar"
+        app:layout_constraintBottom_toBottomOf="@+id/buttonBorrar"
+        app:layout_constraintEnd_toStartOf="@+id/buttonBorrar" />
+
+    <Button
+        android:id="@+id/buttonBorrar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="84dp"
+        android:layout_marginBottom="61dp"
+        android:text="Borrar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/persUnidas" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

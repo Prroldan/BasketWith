@@ -16,7 +16,8 @@ interface EventoGratuitoRepository:JpaRepository<EventoGratuito, UUID>{
 
 
     fun findByNombre(nombre:String):Optional<EventoGratuito>
-    fun findAllByCreadoPor(creado_por:User):List<EventoGratuito>
+    @Query("select distinct e from EventoGratuito e where e.creadoPor.id=:id")
+    fun findAllHistorial(id:UUID):List<EventoGratuito>
 
 
 

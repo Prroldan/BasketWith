@@ -39,6 +39,7 @@
         android:text="TextView"
         android:textColor="#000000"
         android:textSize="20sp"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/iconoEvento" />
 
@@ -57,6 +58,7 @@
         android:text="Fecha:"
         android:textColor="#000000"
         android:textSize="18sp"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/fecha" />
 
@@ -110,6 +112,7 @@
         android:text="Información:"
         android:textColor="#000000"
         android:textSize="18sp"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="@+id/nombre"
         app:layout_constraintTop_toBottomOf="@+id/nombre" />
 
@@ -121,6 +124,7 @@
         android:text="Ubicación: "
         android:textColor="#000000"
         android:textSize="18sp"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="@+id/textView10"
         app:layout_constraintTop_toBottomOf="@+id/textView10" />
 
@@ -147,7 +151,8 @@
         android:textColor="#000000"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView18" />
+        app:layout_constraintTop_toBottomOf="@+id/textView18"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/textView13"
@@ -157,6 +162,7 @@
         android:text="Personas unidas: "
         android:textColor="#000000"
         android:textSize="18sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/persUnidas"
         app:layout_constraintStart_toStartOf="@+id/textView26"
         app:layout_constraintTop_toBottomOf="@+id/textView26"
@@ -170,6 +176,7 @@
         android:text="Hora:"
         android:textColor="#000000"
         android:textSize="18sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toStartOf="@+id/Hora"
         app:layout_constraintTop_toTopOf="@+id/Hora" />
 
@@ -188,5 +195,16 @@
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/textView13"
         app:layout_constraintTop_toBottomOf="@+id/ubicacion" />
+
+    <Button
+        android:id="@+id/join"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="100dp"
+        android:text="Join"
+        app:layout_constraintEnd_toEndOf="@+id/persUnidas"
+        app:layout_constraintTop_toBottomOf="@+id/persUnidas" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

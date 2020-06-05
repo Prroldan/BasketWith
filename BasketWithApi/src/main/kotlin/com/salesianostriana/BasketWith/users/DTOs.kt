@@ -24,9 +24,8 @@ data class CreateUserDTO(
         var surname: String,
         var dni:String,
         var edad:Number,
-        val password: String,
-        val eventosCreados: Number,
-        val eventosParticipados: Number
+        val password: String
+
 )
 
 

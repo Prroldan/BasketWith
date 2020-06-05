@@ -1,6 +1,6 @@
-package com.basketwithapp
+package com.basketwithapp.di
 
-import android.content.Context
+
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
@@ -10,19 +10,17 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.Observer
-
-import com.basketwithapp.dummy.DummyContent
-import com.basketwithapp.dummy.DummyContent.DummyItem
+import com.basketwithapp.R
 import com.basketwithapp.models.freeEvents.ListFreeEventsResponseItem
 import com.basketwithapp.viewmodel.FreeEventsViewModel
 
 
-class ListFreeEventsMeResponseItemFragment : Fragment() {
+class ListFreeEventsResponseFragment : Fragment() {
 
     private lateinit var freeEventsViewModel: FreeEventsViewModel
 
-    private lateinit var adapterMe: MyListFreeEventsMeRecyclerViewAdapter
-    private lateinit var allFreeMeEvents: List<ListFreeEventsResponseItem?>
+    private lateinit var myListFreeEventsResponseRecyclerViewAdapter: MyListFreeEventsResponseRecyclerViewAdapter
+    private lateinit var allFreeEvents: List<ListFreeEventsResponseItem?>
 
     private var columnCount = 1
 
@@ -40,9 +38,10 @@ class ListFreeEventsMeResponseItemFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val view =
-            inflater.inflate(R.layout.fragment_list_free_events_me_response_item_list, container, false)
+            inflater.inflate(R.layout.fragment_list_free_events_response_list, container, false)
 
-        adapterMe = MyListFreeEventsMeRecyclerViewAdapter()
+        myListFreeEventsResponseRecyclerViewAdapter =
+            MyListFreeEventsResponseRecyclerViewAdapter()
 
         // Set the adapter
         if (view is RecyclerView) {
@@ -51,14 +50,14 @@ class ListFreeEventsMeResponseItemFragment : Fragment() {
                     columnCount <= 1 -> LinearLayoutManager(context)
                     else -> GridLayoutManager(context, columnCount)
                 }
-                adapter = MyListFreeEventsMeRecyclerViewAdapter()
+                adapter = myListFreeEventsResponseRecyclerViewAdapter
             }
         }
         freeEventsViewModel = FreeEventsViewModel()
 
-        freeEventsViewModel.allfreeEventsMe().observe(viewLifecycleOwner, Observer {
-            allFreeMeEvents = it
-            adapterMe.setData(allFreeMeEvents)
+        freeEventsViewModel.allfreeEvents().observe(viewLifecycleOwner, Observer {
+            allFreeEvents = it
+            myListFreeEventsResponseRecyclerViewAdapter.setData(allFreeEvents)
         })
 
         return view

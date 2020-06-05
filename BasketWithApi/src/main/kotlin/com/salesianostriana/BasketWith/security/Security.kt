@@ -73,6 +73,7 @@ class WebSecurityConfiguration(
                     .antMatchers(POST, "/auth/login", "/user/").permitAll()
                     .antMatchers(GET, "/freeEvents/**", "/payEvents/**").hasRole("USER")
                     .antMatchers(POST, "/freeEvents/**", "/payEvents/**").hasRole("USER")
+                    .antMatchers(DELETE, "/freeEvents/**", "/payEvents/**").hasRole("USER")
                     .anyRequest().hasRole("ADMIN")
 
         http.addFilterBefore(jwtAuthorizationFilter, UsernamePasswordAuthenticationFilter::class.java)
